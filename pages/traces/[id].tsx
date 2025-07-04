@@ -10,28 +10,38 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { Button } from "@/components/ui/button";
-import { IconRefresh } from "@tabler/icons-react";
+import { IconCopy, IconRefresh } from "@tabler/icons-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { GanttProgress } from "@/components/ui/gantt-progress";
+import Head from "next/head";
 
 export default function TracePage() {
   const router = useRouter();
 
   return (
     <>
+      <Head>
+        <title>{`Traces - ${router.query.id}`}</title>
+      </Head>
       <SiteHeader
         title={
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/traces">Tracs</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{router.query.id}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <div className="flex gap-2">
+            <Breadcrumb className="flex justify-center">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/traces">Traces</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{"Agent workflow"}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <Button variant={"ghost"} size={"sm"}>
+              <IconCopy />
+              <span className="max-w-[150px] truncate">{router.query.id}</span>
+            </Button>
+          </div>
         }
         actions={
           <Button

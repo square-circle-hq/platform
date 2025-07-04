@@ -28,7 +28,7 @@ function GanttProgress({
       ></div>
       <ProgressPrimitive.Indicator
         data-slot="gantt-progress-indicator"
-        className={`bg-white h-full transition-all`}
+        className={`bg-primary h-full transition-all`}
         style={{
           width: indicatorWidth > 0 ? `${indicatorWidth}%` : "4px",
         }}
