@@ -14,7 +14,11 @@
     "indentStyle": "space"
   },
   "linter": {
-    "enabled": false
+    "rules": {
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      }
+    }
   },
   "javascript": {
     "formatter": {
