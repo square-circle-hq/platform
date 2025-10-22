@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "02:00"
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
